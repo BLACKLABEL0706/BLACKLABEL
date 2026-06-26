@@ -6,35 +6,28 @@
 <title>BLACK LABEL MOTORCYCLES</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #0c0c0e; color: #b8b8b8; font-family: 'Helvetica Neue', Arial, sans-serif; }
-
-nav { background: rgba(8,8,10,0.97); border-bottom: 1px solid #1c1c20; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; }
+body { background: #0a0a0c; color: #b8b8b8; font-family: 'Helvetica Neue', Arial, sans-serif; }
+nav { background: #050507; border-bottom: 1px solid #1a1a1e; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; }
 .nav-logo img { height: 44px; width: auto; }
 .nav-links { display: flex; gap: 32px; }
 .nav-links a { font-size: 11px; color: #4a4a52; text-decoration: none; letter-spacing: 3px; text-transform: uppercase; transition: color 0.2s; }
 .nav-links a:hover { color: #9a9aa2; }
-
-.hero { min-height: 100vh; background: #08080c; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; border-bottom: 1px solid #14141a; }
-
-/* PC: ロゴ大きく */
-.hero-logo { width: 420px; height: auto; margin-bottom: 2.5rem; filter: drop-shadow(0 8px 40px rgba(0,0,0,0.9)) brightness(1.05); }
-
-.hero-desc { font-size: 13px; color: #4a4a52; line-height: 2.2; letter-spacing: 2px; max-width: 340px; margin-bottom: 3rem; }
+.hero { min-height: 100vh; background: radial-gradient(ellipse at 50% 50%, #383d46 0%, #22262d 55%, #1a1d22 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; border-bottom: 2px solid #0a0a0c; }
+.hero-logo { width: 420px; height: auto; margin-bottom: 2.5rem; }
+.hero-desc { font-size: 13px; color: #7a7a82; line-height: 2.2; letter-spacing: 2px; max-width: 340px; margin-bottom: 3rem; }
 .hero-btns { display: flex; gap: 14px; justify-content: center; }
-.btn-primary { background: #2a2a32; color: #aaa; border: 1px solid #3a3a42; padding: 13px 36px; font-size: 11px; font-weight: 500; cursor: pointer; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; }
-.btn-primary:hover { background: #32323c; color: #ccc; }
-.btn-secondary { background: transparent; color: #3a3a42; border: 1px solid #1e1e26; padding: 13px 36px; font-size: 11px; cursor: pointer; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.2s; }
-.btn-secondary:hover { border-color: #3a3a42; color: #6a6a72; }
-
+.btn-primary { background: #3a3f48; color: #ccc; border: 1px solid #5a5f68; padding: 13px 36px; font-size: 11px; font-weight: 500; cursor: pointer; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.2s; }
+.btn-primary:hover { background: #454a54; color: #fff; }
+.btn-secondary { background: transparent; color: #4a4a52; border: 1px solid #2a2f38; padding: 13px 36px; font-size: 11px; cursor: pointer; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.2s; }
+.btn-secondary:hover { border-color: #4a4f58; color: #7a7a82; }
 .section { padding: 4rem 2.5rem; max-width: 1040px; margin: 0 auto; }
 .section-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem; }
 .section-title { font-size: 10px; font-weight: 500; color: #5a5a62; letter-spacing: 5px; text-transform: uppercase; white-space: nowrap; }
 .section-line { flex: 1; height: 1px; background: #18181e; }
-
 .stock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: #14141a; border: 1px solid #14141a; }
 .stock-card { background: #09090c; padding: 2rem 1.5rem; transition: background 0.2s; }
 .stock-card:hover { background: #0e0e12; }
-.card-img { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 72px; margin-bottom: 1.5rem; filter: grayscale(0.4); }
+.card-img { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 72px; margin-bottom: 1.5rem; }
 .card-type { font-size: 9px; letter-spacing: 4px; color: #5a5a62; text-transform: uppercase; margin-bottom: 8px; }
 .card-name { font-size: 17px; font-weight: 500; color: #c8c8cc; margin-bottom: 6px; }
 .card-detail { font-size: 12px; color: #3a3a42; margin-bottom: 16px; line-height: 1.8; }
@@ -45,54 +38,40 @@ nav { background: rgba(8,8,10,0.97); border-bottom: 1px solid #1c1c20; padding: 
 .tag.new { color: #5a7a5a; border-color: #1a2a18; background: #0a0e0a; }
 .card-btn { width: 100%; padding: 10px; background: #0e0e14; border: 1px solid #24242c; color: #4a4a52; font-size: 10px; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; transition: all 0.2s; }
 .card-btn:hover { border-color: #4a4a52; color: #8a8a92; }
-
 .philosophy { background: #060608; border-top: 1px solid #12121a; border-bottom: 1px solid #12121a; padding: 5rem 2rem; text-align: center; }
-.philosophy-logo { width: 110px; height: auto; margin: 0 auto 2.5rem; opacity: 0.5; filter: grayscale(0.3); }
+.philosophy-logo { width: 110px; height: auto; margin: 0 auto 2.5rem; opacity: 0.5; }
 .philosophy-quote { font-size: 17px; color: #3a3a42; letter-spacing: 3px; line-height: 2.2; max-width: 480px; margin: 0 auto 2rem; }
 .philosophy-line { width: 40px; height: 1px; background: #3a3a42; margin: 0 auto; }
-
 .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2.5rem; }
 .info-label { font-size: 9px; letter-spacing: 4px; color: #28282e; text-transform: uppercase; margin-bottom: 10px; }
 .info-value { font-size: 14px; color: #5a5a62; line-height: 1.9; }
-
 .contact-section { background: #060608; border-top: 1px solid #12121a; padding: 4rem 2.5rem; }
 .contact-inner { max-width: 1040px; margin: 0 auto; }
-.contact-desc { font-size: 13px; color: #3a3a42; line-height: 2; margin-bottom: 2rem; letter-spacing: 1px; }
+.contact-desc { font-size: 13px; color: #3a3a42; line-height: 2; margin-bottom: 2rem; }
 .contact-links { display: flex; flex-direction: column; gap: 14px; }
-.contact-links a { color: #5a5a62; font-size: 13px; text-decoration: none; letter-spacing: 2px; transition: color 0.2s; }
+.contact-links a { color: #5a5a62; font-size: 13px; text-decoration: none; letter-spacing: 2px; }
 .contact-links a:hover { color: #8a8a92; }
-
 footer { background: #060608; border-top: 1px solid #0e0e12; padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
 .footer-logo img { height: 30px; width: auto; opacity: 0.25; filter: grayscale(1); }
 .footer-copy { font-size: 10px; color: #222228; letter-spacing: 2px; }
-
-/* スマホ対応 */
 @media (max-width: 768px) {
   nav { padding: 0 1.2rem; height: 56px; }
   .nav-logo img { height: 34px; }
   .nav-links { gap: 16px; }
   .nav-links a { font-size: 10px; letter-spacing: 2px; }
-
   .hero { min-height: 100svh; padding: 3rem 1.5rem; }
   .hero-logo { width: min(80vw, 280px); margin-bottom: 2rem; }
-
   .hero-desc { font-size: 12px; letter-spacing: 1px; margin-bottom: 2rem; }
   .hero-btns { flex-direction: column; align-items: center; gap: 10px; width: 100%; }
   .btn-primary, .btn-secondary { width: 100%; max-width: 260px; text-align: center; padding: 12px 20px; }
-
   .section { padding: 2.5rem 1.2rem; }
   .stock-grid { grid-template-columns: 1fr; }
-
   .philosophy { padding: 3rem 1.2rem; }
   .philosophy-quote { font-size: 14px; letter-spacing: 1.5px; }
-
   .info-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-
   .contact-section { padding: 2.5rem 1.2rem; }
-
   footer { padding: 1.5rem 1.2rem; flex-direction: column; gap: 8px; text-align: center; }
 }
-
 @media (max-width: 400px) {
   .hero-logo { width: 85vw; }
   .nav-links { display: none; }
@@ -100,7 +79,6 @@ footer { background: #060608; border-top: 1px solid #0e0e12; padding: 2rem 2.5re
 </style>
 </head>
 <body>
-
 <nav>
   <a class="nav-logo" href="#"><img src="logo.jpg" alt="Black Label Motorcycles"></a>
   <div class="nav-links">
@@ -109,7 +87,6 @@ footer { background: #060608; border-top: 1px solid #0e0e12; padding: 2rem 2.5re
     <a href="#contact">連絡</a>
   </div>
 </nav>
-
 <div class="hero">
   <img class="hero-logo" src="logo.jpg" alt="Black Label Motorcycles">
   <div class="hero-desc">妥協しない一台を。<br>カスタムバイクの販売・買取・製作。</div>
@@ -118,7 +95,6 @@ footer { background: #060608; border-top: 1px solid #0e0e12; padding: 2rem 2.5re
     <a href="#contact" class="btn-secondary">お問い合わせ</a>
   </div>
 </div>
-
 <div class="section" id="stock">
   <div class="section-header">
     <div class="section-title">在庫一覧</div>
@@ -154,13 +130,11 @@ footer { background: #060608; border-top: 1px solid #0e0e12; padding: 2rem 2.5re
     </div>
   </div>
 </div>
-
 <div class="philosophy">
   <img class="philosophy-logo" src="logo.jpg" alt="">
   <div class="philosophy-quote">「乗る人の個性を、一台に宿す。」</div>
   <div class="philosophy-line"></div>
 </div>
-
 <div class="section" id="about">
   <div class="section-header">
     <div class="section-title">ショップについて</div>
@@ -174,7 +148,6 @@ footer { background: #060608; border-top: 1px solid #0e0e12; padding: 2rem 2.5re
     <div><div class="info-label">電話</div><div class="info-value">000-0000-0000</div></div>
   </div>
 </div>
-
 <div class="contact-section" id="contact">
   <div class="contact-inner">
     <div class="section-header">
@@ -188,11 +161,9 @@ footer { background: #060608; border-top: 1px solid #0e0e12; padding: 2rem 2.5re
     </div>
   </div>
 </div>
-
 <footer>
   <div class="footer-logo"><img src="logo.jpg" alt="Black Label Motorcycles"></div>
   <div class="footer-copy">© 2026 Black Label Motorcycles</div>
 </footer>
-
 </body>
 </html>
