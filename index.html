@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLACK LABEL MOTORCYCLES</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0c0c0e; color: #b8b8b8; font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+nav { background: rgba(8,8,10,0.97); border-bottom: 1px solid #1c1c20; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; }
+.nav-logo img { height: 44px; width: auto; }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a { font-size: 11px; color: #4a4a52; text-decoration: none; letter-spacing: 3px; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: #9a8a6a; }
+
+.hero { min-height: 100vh; background: radial-gradient(ellipse at 50% 30%, #16161a 0%, #08080a 70%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; border-bottom: 1px solid #14141a; }
+.hero-logo { width: 280px; height: auto; margin-bottom: 2.5rem; filter: drop-shadow(0 8px 32px rgba(0,0,0,0.8)) brightness(1.05); }
+.hero-desc { font-size: 13px; color: #4a4a52; line-height: 2.2; letter-spacing: 2px; max-width: 340px; margin-bottom: 3rem; }
+.hero-btns { display: flex; gap: 14px; justify-content: center; }
+
+.btn-primary { background: linear-gradient(135deg, #6a6a72 0%, #3a3a42 50%, #5a5a62 100%); color: #e0e0e0; border: 1px solid #5a5a62; padding: 13px 36px; font-size: 11px; font-weight: 500; cursor: pointer; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; position: relative; }
+.btn-primary:hover { background: linear-gradient(135deg, #7a7a82 0%, #4a4a52 50%, #6a6a72 100%); color: #fff; }
+
+.btn-secondary { background: transparent; color: #6a6a72; border: 1px solid #2a2a32; padding: 13px 36px; font-size: 11px; cursor: pointer; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.2s; }
+.btn-secondary:hover { border-color: #5a5a62; color: #9a9aa2; }
+
+.section { padding: 4rem 2.5rem; max-width: 1040px; margin: 0 auto; }
+.section-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem; }
+.section-title { font-size: 10px; font-weight: 500; color: #5a5a62; letter-spacing: 5px; text-transform: uppercase; white-space: nowrap; }
+.section-line { flex: 1; height: 1px; background: #18181e; }
+
+.stock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: #14141a; border: 1px solid #14141a; }
+.stock-card { background: #09090c; padding: 2rem 1.5rem; transition: background 0.2s; }
+.stock-card:hover { background: #0e0e12; }
+.card-img { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 72px; margin-bottom: 1.5rem; filter: grayscale(0.3); }
+.card-type { font-size: 9px; letter-spacing: 4px; color: #5a5a62; text-transform: uppercase; margin-bottom: 8px; }
+.card-name { font-size: 17px; font-weight: 500; color: #c8c8cc; margin-bottom: 6px; }
+.card-detail { font-size: 12px; color: #3a3a42; margin-bottom: 16px; line-height: 1.8; letter-spacing: 0.5px; }
+.card-price { font-size: 21px; font-weight: 500; color: #8a8a92; margin-bottom: 14px; }
+.card-price small { font-size: 11px; color: #2a2a32; margin-left: 4px; }
+.card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.tag { font-size: 9px; padding: 3px 10px; background: #0c0c10; color: #3a3a42; border: 1px solid #1a1a20; letter-spacing: 2px; text-transform: uppercase; }
+.tag.new { color: #5a7a5a; border-color: #1a2a18; background: #0a0e0a; }
+.card-btn { width: 100%; padding: 10px; background: linear-gradient(135deg, #14141a, #1a1a22); border: 1px solid #24242c; color: #4a4a52; font-size: 10px; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; transition: all 0.2s; }
+.card-btn:hover { border-color: #4a4a52; color: #8a8a92; background: linear-gradient(135deg, #1a1a22, #22222c); }
+
+.philosophy { background: #060608; border-top: 1px solid #12121a; border-bottom: 1px solid #12121a; padding: 5rem 2rem; text-align: center; }
+.philosophy-logo { width: 110px; height: auto; margin: 0 auto 2.5rem; opacity: 0.5; filter: grayscale(0.3); }
+.philosophy-quote { font-size: 17px; font-weight: 400; color: #4a4a52; letter-spacing: 3px; line-height: 2.2; max-width: 480px; margin: 0 auto 2rem; }
+.philosophy-line { width: 40px; height: 1px; background: #3a3a42; margin: 0 auto; }
+
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2.5rem; }
+.info-label { font-size: 9px; letter-spacing: 4px; color: #28282e; text-transform: uppercase; margin-bottom: 10px; }
+.info-value { font-size: 14px; color: #5a5a62; line-height: 1.9; }
+
+.contact-section { background: #060608; border-top: 1px solid #12121a; padding: 4rem 2.5rem; }
+.contact-inner { max-width: 1040px; margin: 0 auto; }
+.contact-desc { font-size: 13px; color: #3a3a42; line-height: 2; margin-bottom: 2rem; letter-spacing: 1px; }
+.contact-links { display: flex; flex-direction: column; gap: 14px; }
+.contact-links a { color: #5a5a62; font-size: 13px; text-decoration: none; letter-spacing: 2px; transition: color 0.2s; }
+.contact-links a:hover { color: #8a8a92; }
+
+footer { background: #060608; border-top: 1px solid #0e0e12; padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+.footer-logo img { height: 30px; width: auto; opacity: 0.25; filter: grayscale(1); }
+.footer-copy { font-size: 10px; color: #222228; letter-spacing: 2px; }
+
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .hero-logo { width: 210px; }
+  .hero-btns { flex-direction: column; align-items: center; }
+  .stock-grid { grid-template-columns: 1fr; }
+  .section { padding: 3rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#"><img src="logo.jpg" alt="Black Label Motorcycles"></a>
+  <div class="nav-links">
+    <a href="#stock">在庫</a>
+    <a href="#about">について</a>
+    <a href="#contact">連絡</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <img class="hero-logo" src="logo.jpg" alt="Black Label Motorcycles">
+  <div class="hero-desc">妥協しない一台を。<br>カスタムバイクの販売・買取・製作。</div>
+  <div class="hero-btns">
+    <a href="#stock" class="btn-primary">在庫を見る</a>
+    <a href="#contact" class="btn-secondary">お問い合わせ</a>
+  </div>
+</div>
+
+<div class="section" id="stock">
+  <div class="section-header">
+    <div class="section-title">在庫一覧</div>
+    <div class="section-line"></div>
+  </div>
+  <div class="stock-grid">
+    <div class="stock-card">
+      <div class="card-img">🏍️</div>
+      <div class="card-type">Custom</div>
+      <div class="card-name">Harley-Davidson Softail</div>
+      <div class="card-detail">2018年式 ／ 8,500km<br>フルカスタム仕様</div>
+      <div class="card-price">¥2,480,000<small>税込</small></div>
+      <div class="card-tags"><span class="tag new">新着</span><span class="tag">カスタム</span><span class="tag">整備済</span></div>
+      <button class="card-btn" onclick="location.href='#contact'">お問い合わせ →</button>
+    </div>
+    <div class="stock-card">
+      <div class="card-img">🏍️</div>
+      <div class="card-type">Bobber</div>
+      <div class="card-name">Indian Scout Bobber</div>
+      <div class="card-detail">2020年式 ／ 5,200km<br>ワンオーナー</div>
+      <div class="card-price">¥1,850,000<small>税込</small></div>
+      <div class="card-tags"><span class="tag">ワンオーナー</span><span class="tag">ETC付</span></div>
+      <button class="card-btn" onclick="location.href='#contact'">お問い合わせ →</button>
+    </div>
+    <div class="stock-card">
+      <div class="card-img">🏍️</div>
+      <div class="card-type">Chopper</div>
+      <div class="card-name">Kawasaki W800</div>
+      <div class="card-detail">2019年式 ／ 11,000km<br>チョッパーカスタム</div>
+      <div class="card-price">¥980,000<small>税込</small></div>
+      <div class="card-tags"><span class="tag">カスタム</span><span class="tag">整備済</span></div>
+      <button class="card-btn" onclick="location.href='#contact'">お問い合わせ →</button>
+    </div>
+  </div>
+</div>
+
+<div class="philosophy">
+  <img class="philosophy-logo" src="logo.jpg" alt="">
+  <div class="philosophy-quote">「乗る人の個性を、一台に宿す。」</div>
+  <div class="philosophy-line"></div>
+</div>
+
+<div class="section" id="about">
+  <div class="section-header">
+    <div class="section-title">ショップについて</div>
+    <div class="section-line"></div>
+  </div>
+  <div class="info-grid">
+    <div><div class="info-label">ショップ名</div><div class="info-value">Black Label Motorcycles</div></div>
+    <div><div class="info-label">取扱内容</div><div class="info-value">カスタムバイク販売<br>買取・製作</div></div>
+    <div><div class="info-label">所在地</div><div class="info-value">兵庫県</div></div>
+    <div><div class="info-label">営業時間</div><div class="info-value">10:00 – 19:00<br>定休日：水曜</div></div>
+    <div><div class="info-label">電話</div><div class="info-value">000-0000-0000</div></div>
+  </div>
+</div>
+
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="section-header">
+      <div class="section-title">お問い合わせ</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-desc">在庫・買取・カスタム製作のご相談はお気軽にどうぞ。</div>
+    <div class="contact-links">
+      <a href="mailto:info@example.com">📧 info@example.com</a>
+      <a href="tel:000-0000-0000">📞 000-0000-0000</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="logo.jpg" alt="Black Label Motorcycles"></div>
+  <div class="footer-copy">© 2026 Black Label Motorcycles</div>
+</footer>
+
+</body>
+</html>
